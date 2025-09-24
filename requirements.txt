@@ -108,12 +108,16 @@ numpy
 # Data manipulation and analysis (built on numpy, 10-20 MB)
 pandas
 
+# Qt-based GUI framework for interactive plotting and animations (~50-60 MB)
+PyQt6; sys_platform != "win32"
+
 # ======================================================
 # KAFKA STREAMING MESSAGE BROKER INTEGRATION
 # ======================================================
 
 # Kafka Python client (lightweight, ~1 MB)
 # Supports Kafka 3.5+ with KRaft mode (no ZooKeeper required)
+six
 kafka-python-ng
 
 # ======================================================
