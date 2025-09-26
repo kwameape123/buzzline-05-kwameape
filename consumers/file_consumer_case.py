@@ -70,62 +70,43 @@ def process_message(message: str) -> None:
 
 
 def consume_messages_from_file(live_data_path, sql_path, interval_secs, last_position):
-    """
-    Consume new messages from a file and process them.
-    Each message is expected to be JSON-formatted.
-
-    Args:
-    - live_data_path (pathlib.Path): Path to the live data file.
-    - sql_path (pathlib.Path): Path to the SQLite database file.
-    - interval_secs (int): Interval in seconds to check for new messages.
-    - last_position (int): Last read position in the file.
-    """
-    logger.info("Called consume_messages_from_file() with:")
-    logger.info(f"   {live_data_path=}")
-    logger.info(f"   {sql_path=}")
-    logger.info(f"   {interval_secs=}")
-    logger.info(f"   {last_position=}")
-
-    logger.info("1. Initialize the database.")
+    logger.info("Called consume_messages_from_file()")
     init_db(sql_path)
 
-    logger.info("2. Set the last position to 0 to start at the beginning of the file.")
+    # Start at the beginning or given position
     last_position = 0
 
     while True:
         try:
-            logger.info(f"3. Read from live data file at position {last_position}.")
             with open(live_data_path, "r") as file:
-                # Move to the last read position
+                # Move to last read position
                 file.seek(last_position)
-                for line in file:
-                    # If we strip whitespace and there is content
+
+                while True:
+                    line = file.readline()  # read a single line
+                    if not line:  # no new data yet
+                        time.sleep(0.1)
+                        continue
+
+                    # Process only if line has content
                     if line.strip():
-
-                        # Use json.loads to parse the stripped line
                         message = json.loads(line.strip())
-
-                        # Call our process_message function
                         processed_message = process_message(message)
-
-                        # If we have a processed message, insert it into the database
                         if processed_message:
                             insert_message(processed_message, sql_path)
 
-                # Update the last position that's been read to the current file position
-                last_position = file.tell()
-
-                # Return the last position to be used in the next iteration
-                return last_position
+                    # Update last_position
+                    last_position = file.tell()
 
         except FileNotFoundError:
-            logger.error(f"ERROR: Live data file not found at {live_data_path}.")
-            sys.exit(10)
+            logger.error(f"Live data file not found at {live_data_path}.")
+            time.sleep(interval_secs)
+        except json.JSONDecodeError as e:
+            logger.warning(f"Skipped malformed JSON line: {e}")
         except Exception as e:
-            logger.error(f"ERROR: Error reading from live data file: {e}")
-            sys.exit(11)
+            logger.error(f"Error reading from live data file: {e}")
+            time.sleep(interval_secs)
 
-        time.sleep(interval_secs)
 
 
 #####################################
