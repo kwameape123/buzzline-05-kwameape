@@ -1,48 +1,55 @@
-"""
-kafka_emitter.py
+# kafka_emitter.py
 
-Emit messages to a Kafka topic.
-
-A Kafka emitter integrates with a distributed streaming platform:
-- Each message is serialized and published to a configured topic.
-- Downstream consumers can subscribe independently.
-- Useful for scaling and decoupling systems.
-
-Use this for real-time streaming or when
-integrating with other streaming analytics tools.
-"""
-
-import json
-from typing import Mapping, Any
-
-from utils.utils_logger import logger
 from kafka import KafkaProducer
+from kafka.admin import KafkaAdminClient, NewTopic
+from kafka.errors import TopicAlreadyExistsError
+import json
+from utils.utils_logger import logger
 
+# -------------------------------------------------
+# Define basic Kafka configuration
+# -------------------------------------------------
+BOOTSTRAP_SERVERS = 'localhost:9092'  # Change if your Kafka is on a different host
 
-def emit_message(
-    message: Mapping[str, Any],
-    *,
-    producer: KafkaProducer,  # Explicit type, works with postponed evaluation
-    topic: str,
-) -> bool:
-    """
-    Publish one message (dict-like) to a Kafka topic.
-
-    Args:
-        message:  Dict-like payload to send.
-        producer: An initialized KafkaProducer instance.
-        topic:    Target Kafka topic name.
-
-    Returns:
-        True on success, False on failure.
-    """
+# -------------------------------------------------
+# Create topic if it doesn't exist
+# -------------------------------------------------
+def create_topic(topic_name: str) -> None:
+    """Create a Kafka topic if it doesn't exist."""
+    admin_client = KafkaAdminClient(bootstrap_servers=BOOTSTRAP_SERVERS)
+    topic = NewTopic(
+        name=topic_name,
+        num_partitions=3,
+        replication_factor=1
+    )
     try:
-        # Pretty Unicode support; still encoded as UTF-8 bytes for Kafka
-        payload = json.dumps(message, ensure_ascii=False).encode("utf-8")
-        producer.send(topic, value=payload)
-        # Producer batches internally; callers can flush on shutdown if desired.
-        logger.debug(f"[kafka_emitter] sent message to topic '{topic}'")
-        return True
+        admin_client.create_topics([topic])
+        logger.info(f"Topic '{topic_name}' created successfully.")
+    except TopicAlreadyExistsError:
+        logger.info(f"Topic '{topic_name}' already exists.")
     except Exception as e:
-        logger.error(f"[kafka_emitter] failed to send to '{topic}': {e}")
-        return False
+        logger.info(f"Topic not created:{e}")
+    finally:
+        admin_client.close()
+
+# -------------------------------------------------
+# Define a Kafka Producer
+# -------------------------------------------------
+def get_producer() -> KafkaProducer:
+    """Create and return a Kafka producer."""
+    return KafkaProducer(
+        bootstrap_servers=BOOTSTRAP_SERVERS,
+        value_serializer=lambda v: json.dumps(v).encode("utf-8")
+    )
+
+# -------------------------------------------------
+# Send messages to the topic
+# -------------------------------------------------
+def send_messages(producer: KafkaProducer, topic_name: str, message: dict) -> None:
+    """Send a single message to the given Kafka topic."""
+    try:
+        producer.send(topic_name, value=message)
+        producer.flush()
+        logger.info(f"Sent to topic '{topic_name}': {message}")
+    except Exception as e:
+        logger.error(f"[Kafka_emitter] Failed to send to '{topic_name}': {e}")

@@ -97,3 +97,68 @@
 2025-09-26 07:40:39 | INFO | Producer shutting down.
 2025-09-26 07:40:43 | WARNING | Consumer interrupted by user.
 2025-09-26 07:40:43 | INFO | TRY/FINALLY: Consumer shutting down.
+2025-09-27 04:14:28 | INFO | Logging to file: logs/project_log.log
+2025-09-27 04:14:28 | INFO | Log sanitization enabled, personal info removed
+2025-09-27 04:14:29 | INFO | Project root: D:/projects/buzzline-05-USERape
+2025-09-27 04:14:29 | INFO | Data folder: D:/projects/buzzline-05-USERape/data
+2025-09-27 04:14:29 | INFO | Data file: D:/projects/buzzline-05-USERape/data/project2_live.json
+2025-09-27 04:14:29 | INFO | START producer...
+2025-09-27 04:14:29 | INFO | Hit CTRL c (or CMD c) to close.
+2025-09-27 04:14:29 | INFO | Message interval: 5 seconds
+2025-09-27 04:14:29 | INFO | {'message': 'I just saw a storypython! It was weird.', 'author': 'Eve', 'timestamp': '2025-09-27 04:14:29', 'category': 'other', 'sentiment': 0.54, 'keyword_mentioned': 'other', 'message_length': 39}
+2025-09-27 04:14:34 | INFO | {'message': 'I just shared a trick! It was boring.', 'author': 'Charlie', 'timestamp': '2025-09-27 04:14:34', 'category': 'other', 'sentiment': 0.6, 'keyword_mentioned': 'other', 'message_length': 37}
+2025-09-27 04:14:39 | INFO | {'message': 'I just saw game! It was boring.', 'author': 'Charlie', 'timestamp': '2025-09-27 04:14:39', 'category': 'gaming', 'sentiment': 0.62, 'keyword_mentioned': 'game', 'message_length': 31}
+2025-09-27 04:14:44 | INFO | {'message': 'I just saw a storypython! It was weird.', 'author': 'Bob', 'timestamp': '2025-09-27 04:14:44', 'category': 'other', 'sentiment': 0.86, 'keyword_mentioned': 'other', 'message_length': 39}
+2025-09-27 04:14:49 | INFO | {'message': 'I just shared game! It was amazing.', 'author': 'Bob', 'timestamp': '2025-09-27 04:14:49', 'category': 'gaming', 'sentiment': 0.81, 'keyword_mentioned': 'game', 'message_length': 35}
+2025-09-27 04:14:54 | INFO | {'message': 'I just shared JavaScript! It was boring.', 'author': 'Bob', 'timestamp': '2025-09-27 04:14:54', 'category': 'tech', 'sentiment': 0.73, 'keyword_mentioned': 'JavaScript', 'message_length': 40}
+2025-09-27 04:14:59 | INFO | {'message': 'I just saw recipe! It was amazing.', 'author': 'Bob', 'timestamp': '2025-09-27 04:14:59', 'category': 'food', 'sentiment': 0.91, 'keyword_mentioned': 'recipe', 'message_length': 34}
+2025-09-27 04:15:04 | INFO | {'message': 'I just shared game! It was boring.', 'author': 'Bob', 'timestamp': '2025-09-27 04:15:04', 'category': 'gaming', 'sentiment': 0.55, 'keyword_mentioned': 'game', 'message_length': 34}
+2025-09-27 04:15:09 | INFO | {'message': 'I just found game! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-09-27 04:15:09', 'category': 'gaming', 'sentiment': 0.11, 'keyword_mentioned': 'game', 'message_length': 35}
+2025-09-27 04:15:14 | INFO | {'message': 'I just saw an app! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-09-27 04:15:14', 'category': 'other', 'sentiment': 0.45, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-09-27 04:15:19 | INFO | {'message': 'I just loved travel! It was boring.', 'author': 'Bob', 'timestamp': '2025-09-27 04:15:19', 'category': 'travel', 'sentiment': 0.9, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-09-27 04:15:23 | WARNING | Producer interrupted by user.
+2025-09-27 04:15:23 | INFO | Producer shutting down.
+2025-09-27 04:27:11 | INFO | Logging to file: logs/project_log.log
+2025-09-27 04:27:11 | INFO | Log sanitization enabled, personal info removed
+2025-09-27 04:27:12 | INFO | Project root: D:/projects/buzzline-05-USERape
+2025-09-27 04:27:12 | INFO | Data folder: D:/projects/buzzline-05-USERape/data
+2025-09-27 04:27:12 | INFO | Data file: D:/projects/buzzline-05-USERape/data/project2_live.json
+2025-09-27 04:27:12 | INFO | START producer...
+2025-09-27 04:27:12 | INFO | Hit CTRL c (or CMD c) to close.
+2025-09-27 04:27:12 | INFO | Message interval: 5 seconds
+2025-09-27 04:27:12 | INFO | {'message': 'I just tried an app! It was weird.', 'author': 'Charlie', 'timestamp': '2025-09-27 04:27:12', 'category': 'other', 'sentiment': 0.17, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-09-27 04:27:17 | INFO | {'message': 'I just found JavaScript! It was funny.', 'author': 'Alice', 'timestamp': '2025-09-27 04:27:17', 'category': 'tech', 'sentiment': 0.51, 'keyword_mentioned': 'JavaScript', 'message_length': 38}
+2025-09-27 04:27:22 | INFO | {'message': 'I just found a meme! It was funny.', 'author': 'Bob', 'timestamp': '2025-09-27 04:27:22', 'category': 'humor', 'sentiment': 0.9, 'keyword_mentioned': 'meme', 'message_length': 34}
+2025-09-27 04:27:27 | INFO | {'message': 'I just found an app! It was funny.', 'author': 'Eve', 'timestamp': '2025-09-27 04:27:27', 'category': 'other', 'sentiment': 0.84, 'keyword_mentioned': 'other', 'message_length': 34}
+2025-09-27 04:27:32 | INFO | {'message': 'I just saw a movie! It was amazing.', 'author': 'Bob', 'timestamp': '2025-09-27 04:27:32', 'category': 'entertainment', 'sentiment': 0.91, 'keyword_mentioned': 'movie', 'message_length': 35}
+2025-09-27 04:27:37 | INFO | {'message': 'I just tried a movie! It was funny.', 'author': 'Eve', 'timestamp': '2025-09-27 04:27:37', 'category': 'entertainment', 'sentiment': 0.93, 'keyword_mentioned': 'movie', 'message_length': 35}
+2025-09-27 04:27:42 | INFO | {'message': 'I just shared travel! It was funny.', 'author': 'Eve', 'timestamp': '2025-09-27 04:27:42', 'category': 'travel', 'sentiment': 0.43, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-09-27 04:27:44 | WARNING | Producer interrupted by user.
+2025-09-27 04:27:44 | INFO | Producer shutting down.
+2025-09-27 04:35:11 | INFO | Logging to file: logs/project_log.log
+2025-09-27 04:35:11 | INFO | Log sanitization enabled, personal info removed
+2025-09-27 04:35:11 | INFO | Project root: D:/projects/buzzline-05-USERape
+2025-09-27 04:35:11 | INFO | Data folder: D:/projects/buzzline-05-USERape/data
+2025-09-27 04:35:11 | INFO | Data file: D:/projects/buzzline-05-USERape/data/project2_live.json
+2025-09-27 04:35:11 | INFO | Kafka Topic:buzzline_db
+2025-09-27 04:35:11 | INFO | kafka_topic is buzzline_db
+2025-09-27 04:35:12 | INFO | Topic 'buzzline_db' created successfully.
+2025-09-27 04:35:12 | INFO | START producer...
+2025-09-27 04:35:12 | INFO | Hit CTRL c (or CMD c) to close.
+2025-09-27 04:35:12 | INFO | Message interval: 5 seconds
+2025-09-27 04:35:12 | INFO | {'message': 'I just tried a storypython! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-09-27 04:35:12', 'category': 'other', 'sentiment': 0.72, 'keyword_mentioned': 'other', 'message_length': 44}
+2025-09-27 04:35:12 | INFO | Sent to topic 'buzzline_db': {'message': 'I just tried a storypython! It was exciting.', 'author': 'Charlie', 'timestamp': '2025-09-27 04:35:12', 'category': 'other', 'sentiment': 0.72, 'keyword_mentioned': 'other', 'message_length': 44}
+2025-09-27 04:35:17 | INFO | {'message': 'I just saw a storypython! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-09-27 04:35:17', 'category': 'other', 'sentiment': 0.02, 'keyword_mentioned': 'other', 'message_length': 41}
+2025-09-27 04:35:17 | INFO | Sent to topic 'buzzline_db': {'message': 'I just saw a storypython! It was amazing.', 'author': 'Charlie', 'timestamp': '2025-09-27 04:35:17', 'category': 'other', 'sentiment': 0.02, 'keyword_mentioned': 'other', 'message_length': 41}
+2025-09-27 04:35:22 | INFO | {'message': 'I just loved a movie! It was funny.', 'author': 'Eve', 'timestamp': '2025-09-27 04:35:22', 'category': 'entertainment', 'sentiment': 0.15, 'keyword_mentioned': 'movie', 'message_length': 35}
+2025-09-27 04:35:22 | INFO | Sent to topic 'buzzline_db': {'message': 'I just loved a movie! It was funny.', 'author': 'Eve', 'timestamp': '2025-09-27 04:35:22', 'category': 'entertainment', 'sentiment': 0.15, 'keyword_mentioned': 'movie', 'message_length': 35}
+2025-09-27 04:35:27 | INFO | {'message': 'I just shared travel! It was exciting.', 'author': 'Alice', 'timestamp': '2025-09-27 04:35:27', 'category': 'travel', 'sentiment': 0.01, 'keyword_mentioned': 'travel', 'message_length': 38}
+2025-09-27 04:35:27 | INFO | Sent to topic 'buzzline_db': {'message': 'I just shared travel! It was exciting.', 'author': 'Alice', 'timestamp': '2025-09-27 04:35:27', 'category': 'travel', 'sentiment': 0.01, 'keyword_mentioned': 'travel', 'message_length': 38}
+2025-09-27 04:35:32 | INFO | {'message': 'I just shared a meme! It was amazing.', 'author': 'Bob', 'timestamp': '2025-09-27 04:35:32', 'category': 'humor', 'sentiment': 0.32, 'keyword_mentioned': 'meme', 'message_length': 37}
+2025-09-27 04:35:32 | INFO | Sent to topic 'buzzline_db': {'message': 'I just shared a meme! It was amazing.', 'author': 'Bob', 'timestamp': '2025-09-27 04:35:32', 'category': 'humor', 'sentiment': 0.32, 'keyword_mentioned': 'meme', 'message_length': 37}
+2025-09-27 04:35:37 | INFO | {'message': 'I just saw a movie! It was exciting.', 'author': 'Alice', 'timestamp': '2025-09-27 04:35:37', 'category': 'entertainment', 'sentiment': 0.79, 'keyword_mentioned': 'movie', 'message_length': 36}
+2025-09-27 04:35:37 | INFO | Sent to topic 'buzzline_db': {'message': 'I just saw a movie! It was exciting.', 'author': 'Alice', 'timestamp': '2025-09-27 04:35:37', 'category': 'entertainment', 'sentiment': 0.79, 'keyword_mentioned': 'movie', 'message_length': 36}
+2025-09-27 04:35:42 | INFO | {'message': 'I just shared travel! It was funny.', 'author': 'Alice', 'timestamp': '2025-09-27 04:35:42', 'category': 'travel', 'sentiment': 0.08, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-09-27 04:35:42 | INFO | Sent to topic 'buzzline_db': {'message': 'I just shared travel! It was funny.', 'author': 'Alice', 'timestamp': '2025-09-27 04:35:42', 'category': 'travel', 'sentiment': 0.08, 'keyword_mentioned': 'travel', 'message_length': 35}
+2025-09-27 04:35:45 | WARNING | Producer interrupted by user.
+2025-09-27 04:35:45 | INFO | Producer shutting down.
