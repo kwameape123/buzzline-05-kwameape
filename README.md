@@ -158,8 +158,8 @@ You have options.
 2. Start the consumer that reads from the Kafka topic.
 
 NOTE: Each consumer modify or transforms the message read from the
-life or kafka topic and then sends the transformed data to a SQLite database
-as well as a PostgreSQL database. The transform employed was to get of the timestamp
+live data or kafka topic and then sends the transformed data to a SQLite database
+as well as a PostgreSQL database. The transformation employed was to get rid of the timestamp
 feature and remove whitespaces in messages.
 
 In VS Code, open a NEW terminal in your root project folder. 
