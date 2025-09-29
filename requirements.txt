@@ -124,7 +124,7 @@ kafka-python-ng
 # DATABASE INTEGRATION 
 # ======================================================
 
-# sqlite3
+sqlite3
 # - Most popular and accessible: included in Python Std Lib.
 # - Great for beginners, small projects, and teaching.
 # - No install required.
@@ -152,7 +152,7 @@ duckdb
 # Uncomment the line below to install SQLAlchemy.
 # SQLAlchemy
 
-# psycopg2
+psycopg2
 # - Standard PostgreSQL adapter.
 # - Needed if DATABASE_TYPE=postgres.
 # Uncomment the line below to install psycopg2.
