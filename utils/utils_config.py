@@ -47,7 +47,7 @@ def get_kafka_broker_address() -> str:
 
 def get_kafka_topic() -> str:
     """Fetch BUZZ_TOPIC from environment or use default."""
-    topic = os.getenv("BUZZ_TOPIC", "buzzline")
+    topic = os.getenv("BUZZ_TOPIC", "buzzline_db")
     logger.info(f"BUZZ_TOPIC: {topic}")
     return topic
 
@@ -88,6 +88,16 @@ def get_sqlite_path() -> pathlib.Path:
     sqlite_path = get_base_data_path() / os.getenv("SQLITE_DB_FILE_NAME", "buzz.sqlite")
     logger.info(f"SQLITE_PATH: {sqlite_path}")
     return sqlite_path
+
+def get_postgres_config():
+    pg_config= {
+        "dbname": os.getenv("POSTGRES_DB"),
+        "user": os.getenv("POSTGRES_USER"),
+        "password": os.getenv("POSTGRES_PASSWORD"),
+        "host": os.getenv("POSTGRES_HOST"),
+        "port": int(os.getenv("POSTGRES", 5432))
+    }
+    return pg_config
 
 
 def get_database_type() -> str:
