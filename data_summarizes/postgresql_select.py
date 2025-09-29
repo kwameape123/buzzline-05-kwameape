@@ -1,3 +1,9 @@
+""" This module is used to create summary tables from
+a PostgreSQL database based on criteria
+For example with use the function in this module 
+to select all messages from a particular author and write it to a 
+csv file."""
+
 import psycopg2
 from psycopg2.extras import RealDictCursor
 import csv
